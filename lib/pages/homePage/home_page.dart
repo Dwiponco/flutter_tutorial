@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/pages/buttonCustom/button_custom.dart';
+import 'package:flutter_tutorial/pages/clipPath/clipt_path.dart';
 import 'package:flutter_tutorial/pages/gradientTransparant/gradient_transparant.dart';
-import 'package:flutter_tutorial/pages/music/music_page.dart';
 import 'package:flutter_tutorial/pages/qrcode/qr_code.dart';
 
 class HomePage extends StatelessWidget {
@@ -75,11 +75,11 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return MusicPlayerPage();
+                          return ClipPathPage();
                         }));
                       },
                       child: cardMethod(
-                          context, 'Music', Icons.music_video_outlined)),
+                          context, 'Clip Path', Icons.call_split)),
                 ],
               )),
               Center(
