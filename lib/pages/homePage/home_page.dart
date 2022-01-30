@@ -3,6 +3,8 @@ import 'package:flutter_tutorial/pages/buttonCustom/button_custom.dart';
 import 'package:flutter_tutorial/pages/clipPath/clipt_path.dart';
 import 'package:flutter_tutorial/pages/gradientTransparant/gradient_transparant.dart';
 import 'package:flutter_tutorial/pages/httpRequest/api_demo.dart';
+import 'package:flutter_tutorial/pages/httpRequest/api_demo_get.dart';
+import 'package:flutter_tutorial/pages/httpRequest/api_demo_list.dart';
 import 'package:flutter_tutorial/pages/qrcode/qr_code.dart';
 
 class HomePage extends StatelessWidget {
@@ -88,8 +90,26 @@ class HomePage extends StatelessWidget {
                           return ApiDemoPage();
                         }));
                       },
-                      child:
-                          cardMethod(context, 'API Demo', Icons.api_outlined)),
+                      child: cardMethod(
+                          context, 'API Demo post', Icons.api_outlined)),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return ApiDemoGetPage();
+                        }));
+                      },
+                      child: cardMethod(
+                          context, 'API Demo get', Icons.api_outlined)),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return ApiDemoList();
+                        }));
+                      },
+                      child: cardMethod(
+                          context, 'API Demo list', Icons.api_outlined)),
                 ],
               )),
               Center(
