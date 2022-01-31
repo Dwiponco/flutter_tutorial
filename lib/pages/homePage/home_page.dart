@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/pages/animatedPading/animated_padding.dart';
 import 'package:flutter_tutorial/pages/buttonCustom/button_custom.dart';
 import 'package:flutter_tutorial/pages/clipPath/clipt_path.dart';
 import 'package:flutter_tutorial/pages/gradientTransparant/gradient_transparant.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_tutorial/pages/httpRequest/api_demo.dart';
 import 'package:flutter_tutorial/pages/httpRequest/api_demo_get.dart';
 import 'package:flutter_tutorial/pages/httpRequest/api_demo_list.dart';
 import 'package:flutter_tutorial/pages/qrcode/qr_code.dart';
+import 'package:flutter_tutorial/pages/switch_animated/animated_switcher.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -44,7 +46,7 @@ class HomePage extends StatelessWidget {
           body: TabBarView(
             children: [
               Center(
-                  child: Column(
+                  child: ListView(
                 children: [
                   GestureDetector(
                     onTap: () {
@@ -110,6 +112,24 @@ class HomePage extends StatelessWidget {
                       },
                       child: cardMethod(
                           context, 'API Demo list', Icons.api_outlined)),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return AnimatedSwitchPage();
+                        }));
+                      },
+                      child: cardMethod(context, 'Animated Switcher',
+                          Icons.swap_vertical_circle_outlined)),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return AnimatedPaddingPage();
+                        }));
+                      },
+                      child: cardMethod(
+                          context, 'Animated Padding', Icons.padding)),
                 ],
               )),
               Center(
